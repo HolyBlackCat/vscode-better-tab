@@ -25,22 +25,12 @@ function betterTab(isReverse: boolean, editor: vscode.TextEditor): void {
 			let end = selection.end;
 			const isSelectionStartHasCursor = start.line === selection.active.line && start.character === selection.active.character;
 
-			if (editor.selections.length === 1 && selection.isSingleLine && !config.workOnSingleLine) {
-				vscode.commands.executeCommand('type', { text: ' '.repeat(n) });
-				return;
-			}
-
 			const lines: vscode.TextLine[] = [];
 			for (let i = start.line; i <= end.line; i++) {
 				lines.push(editor.document.lineAt(i));
 			}
 
 			if (isReverse) {// Move left
-				if (selection.isSingleLine && start.character === end.character &&
-					lines[0].text.slice(0, selection.start.character).trim() !== '') {
-					vscode.commands.executeCommand('type', { text: ' '.repeat(n) });
-					return;
-				}
 				let isStartLineShifted = false;
                 let isEndLineShifted = false;
 
