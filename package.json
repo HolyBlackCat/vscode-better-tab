@@ -1,21 +1,21 @@
 {
-	"name": "indent-one-space",
-	"displayName": "Indent one space",
-	"description": "Move code to left or right with a distance of one whitespace",
-	"version": "0.2.5",
-	"publisher": "usernamehw",
+	"name": "better-tab",
+	"displayName": "Better tab",
+	"description": "Preserve custom indentation when when un/indenting code.",
+	"version": "0.1.0",
+	"publisher": "holyblackcat",
 	"license": "MIT",
 	"icon": "img/icon.png",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/usernamehw/vscode-indent-one-space"
+		"url": "https://github.com/HolyBlackCat/vscode-better-tab"
 	},
 	"galleryBanner": {
 		"theme": "dark",
 		"color": "#333333"
 	},
 	"bugs": {
-		"url": "https://github.com/usernamehw/vscode-indent-one-space/issues"
+		"url": "https://github.com/HolyBlackCat/vscode-better-tab/issues"
 	},
 	"engines": {
 		"vscode": "^1.17.0"
@@ -28,26 +28,26 @@
 		"indentation"
 	],
 	"activationEvents": [
-		"onCommand:extension.indentOneSpace",
-		"onCommand:extension.reverseIndentOneSpace"
+		"onCommand:betterTab.indent",
+		"onCommand:betterTab.outdent"
 	],
 	"main": "./dist/extension",
 	"contributes": {
 		"configuration": {
 			"type": "object",
-			"title": "Indent one space",
+			"title": "Better tab",
 			"properties": {
-				"indentOneSpace.workOnSingleLine": {
+				"betterTab.workOnSingleLine": {
 					"type": "boolean",
 					"default": true,
 					"description": "Command will execute even when only 1 line is selected."
 				},
-				"indentOneSpace.cramReversed": {
+				"betterTab.cramReversed": {
 					"type": "boolean",
 					"default": true,
 					"description": "Outdent lines even if one of them reached column 0 (gutter)."
 				},
-				"indentOneSpace.onlyCompleteRange": {
+				"betterTab.onlyCompleteRange": {
 					"type": "boolean",
 					"default": false,
 					"description": "Indent only when range is on either side has only whitespace characters and further - line boundaries."
@@ -56,23 +56,23 @@
 		},
 		"commands": [
 			{
-				"command": "extension.indentOneSpace",
-				"title": "Indent one space"
+				"command": "betterTab.indent",
+				"title": "Better indent"
 			},
 			{
-				"command": "extension.reverseIndentOneSpace",
-				"title": "Reverse indent one space"
+				"command": "betterTab.outdent",
+				"title": "Better outdent"
 			}
 		],
 		"keybindings": [
 			{
-				"command": "extension.indentOneSpace",
-				"key": "space",
+				"command": "betterTab.indent",
+				"key": "tab",
 				"when": "editorTextFocus && !editorReadOnly && editorHasSelection"
 			},
 			{
-				"command": "extension.reverseIndentOneSpace",
-				"key": "shift+space",
+				"command": "betterTab.outdent",
+				"key": "shift+tab",
 				"when": "editorTextFocus && !editorReadOnly && editorHasSelection"
 			}
 		]
@@ -90,6 +90,6 @@
 		"typescript": "^3.2.2",
 		"vscode": "^1.1.26",
 		"webpack": "^4.28.3",
-		"webpack-cli": "^3.2.0"
+		"webpack-cli": "^3.3.0"
 	}
 }

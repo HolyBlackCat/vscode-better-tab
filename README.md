@@ -1,17 +1,8 @@
 ## Features
 
-You can move selected code left or right with the <kbd>Spacebar</kbd> key.
-
-![Moving left or right with hotkeys](img/demo.gif)
-
-## Settings
-```javascript
-"indentOneSpace.workOnSingleLine": true,// Even if 1 character on 1 line is selected - the command will work.
-"indentOneSpace.cramReversed": true,// Outdent lines even if one of them has reached column 0 (gutter).
-"indentOneSpace.onlyCompleteRange": false,// Indent works only when selection has nothing or whitespace characters on the sides
-```
+Improves the behavior of Tab and Shift+Tab to not break any misaligned indentation.
 
 ## Commands
 
-* **extension.indentOneSpace** default keybinding <kbd>Space</kbd>
-* **extension.reverseIndentOneSpace** default keybinding <kbd>Shift</kbd>+<kbd>Space</kbd>
+* **betterTab.indent**
+* **betterTab.outdent**
