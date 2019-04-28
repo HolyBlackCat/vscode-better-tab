@@ -2,7 +2,7 @@
 	"name": "better-tab",
 	"displayName": "Better tab",
 	"description": "Preserve custom indentation when when un/indenting code.",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"publisher": "holyblackcat",
 	"license": "MIT",
 	"icon": "img/icon.png",
@@ -63,12 +63,12 @@
 			{
 				"command": "betterTab.indent",
 				"key": "tab",
-				"when": "editorTextFocus && !editorReadOnly && editorHasSelection"
+				"when": "editorTextFocus && !editorReadOnly && editorHasSelection && !editorTabMovesFocus"
 			},
 			{
 				"command": "betterTab.outdent",
 				"key": "shift+tab",
-				"when": "editorTextFocus && !editorReadOnly"
+				"when": "editorTextFocus && !editorReadOnly && !editorTabMovesFocus"
 			}
 		]
 	},
